@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Friendship Day Shiksha  ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #fff5f7;
+            overflow-x: hidden;
+        }
+        .title-font {
+            font-family: 'Dancing Script', cursive;
+        }
+        .balloon {
+            position: absolute;
+            bottom: -100px;
+            animation: float 8s ease-in-out infinite;
+            z-index: 10;
+        }
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                bottom: -100px;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                bottom: 100vh;
+            }
+        }
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.03);
+        }
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        .lightbox-nav {
+            position: absolute;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        .lightbox-nav span {
+            color: white;
+            font-size: 50px;
+            cursor: pointer;
+            user-select: none;
+        }
+        .quality-item {
+            transition: all 0.3s ease;
+        }
+        .quality-item:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <header class="text-center py-12">
+            <h1 class="title-font text-5xl md:text-7xl text-pink-600 mb-6">Happy Friendship Day</h1>
+            <h2 class="title-font text-4xl md:text-6xl text-pink-500 mb-8">Shiksha ❤️</h2>
+            
+            <div class="relative">
+                <!-- Surprise Button -->
+                <button id="surpriseBtn" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-3 px-8 rounded-full text-xl shadow-lg transform transition hover:scale-105 mb-12">
+                    Tap for a Surprise
+                </button>
+                
+                <!-- Music Toggle -->
+                <div class="absolute right-0 top-0 md:right-10 md:top-2">
+                    <button id="musicToggle" class="bg-white bg-opacity-30 rounded-full p-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-pink-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15.536a5 5 0 001.414 1.414m2.828-9.9a9 9 0 011.414 1.414" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Quotes Section -->
+            <div class="max-w-3xl mx-auto space-y-6 mb-16">
+                <div class="bg-white bg-opacity-70 p-6 rounded-xl shadow-md">
+                    <p class="text-xl italic text-gray-700">"Thank you for coming in my life I am so great full that you are my friend" <span class="block text-right text-pink-500 mt-2"></span></p>
+                </div>
+                <div class="bg-white bg-opacity-70 p-6 rounded-xl shadow-md">
+                    <p class="text-xl italic text-gray-700">"Now we are good friends so you have a responsibilty to share every problem with me, So i can give my stupid suggetions to you." <span class="block text-right text-pink-500 mt-2"></span></p>
+                </div>
+                <div class="bg-white bg-opacity-70 p-6 rounded-xl shadow-md">
+                    <p class="text-xl italic text-gray-700">"We are not friends from so far but I became comfortable with you so fast I love to share my all problems with you You are just like my HUMAN DIARY " <span class="block text-right text-pink-500 mt-2"></span></p>
+                </div>
+                <div class="bg-white bg-opacity-70 p-6 rounded-xl shadow-md">
+                    <p class="text-xl italic text-gray-700">"I always like your opinion in my every desicion so i want that you always help in my all the stupid and good desicion" <span class="block text-right text-pink-500 mt-2"></span></p>
+                </div>
+                <div class="bg-white bg-opacity-70 p-6 rounded-xl shadow-md">
+                    <p class="text-xl italic text-gray-700">"THNANK YOU SO MUCHHHH FOR BEINGG MYY FRIEND.... AUR MAI HUMESHA TUMHE PARESHAN KRTE RAHUNGAAAAAA" <span class="block text-right text-pink-500 mt-2"></span></p>
+                </div>
+            </div>
+        </header>
+        
+        <!-- Why Shiksha is Special -->
+        <section class="py-12 px-4">
+            <h2 class="title-font text-4xl text-center text-pink-600 mb-12">Why Shiksha is Special</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+                <div class="quality-item bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl">
+                    <div class="text-5xl mb-4 text-pink-500">❤️</div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Kind</h3>
+                    <p class="text-gray-600">Her heart is full of compassion and she always puts others before herself.</p>
+                </div>
+                
+                <div class="quality-item bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl">
+                    <div class="text-5xl mb-4 text-pink-500">🌼</div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Humble</h3>
+                    <p class="text-gray-600">Despite all her amazing qualities, she remains grounded and modest.</p>
+                </div>
+                
+                <div class="quality-item bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl">
+                    <div class="text-5xl mb-4 text-pink-500">🤗</div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Caring</h3>
+                    <p class="text-gray-600">She always knows exactly what to say or do to make everything better.</p>
+                </div>
+                
+                <div class="quality-item bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl">
+                    <div class="text-5xl mb-4 text-pink-500">✨</div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Beautiful</h3>
+                    <p class="text-gray-600">Her beauty shines from within and reflects in everything she does.</p>
+                </div>
+                
+                <div class="quality-item bg-white p-6 rounded-xl shadow-md text-center hover:shadow-xl">
+                    <div class="text-5xl mb-4 text-pink-500">🌸</div>
+                    <h3 class="text-xl font-semibold mb-2 text-gray-800">Pretty</h3>
+                    <p class="text-gray-600">Her smile lights up the room and her presence makes everything brighter.</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Shiksha Gallery -->
+        <section class="py-12 px-4">
+            <h2 class="title-font text-4xl text-center text-pink-600 mb-12">Shiksha Gallery</h2>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                <!-- Placeholder images - replace with actual images of Shiksha -->
+                <div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(0)">
+                <img src="sik1.jpg" alt="Shiksha" class="w-full h-64 object-cover"> 
+                    </div>
+                <div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(1)">
+                <img src="sik2.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+                    </div>
+
+                <div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(2)">
+    <img src="sik3.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+<div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(3)">
+    <img src="sik4.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+<div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(4)">
+    <img src="sik5.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+<div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(5)">
+    <img src="sik6.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+<div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(6)">
+    <img src="sik7.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+<div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(7)">
+    <img src="sik8.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+<div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(8)">
+    <img src="sik9.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+<div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(9)">
+    <img src="sik10.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+<div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(10)">
+    <img src="sik11.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+<div class="gallery-item rounded-xl overflow-hidden shadow-md cursor-pointer" onclick="openLightbox(11)">
+    <img src="sik12.jpg" alt="Shiksha" class="w-full h-64 object-cover">
+</div>
+
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="text-center py-8 text-gray-600">
+            <p class="mb-2"> For my Saheli "Shiksha"</p>
+            <p>Wish you a very Happy Friendship day</p>
+            <p>Made by Rajeev with ❤️</p>
+        </footer>
+    </div>
+    
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-nav">
+            <span onclick="changeSlide(-1)">&#10094;</span>
+            <span onclick="changeSlide(1)">&#10095;</span>
+        </div>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="">
+    </div>
+    
+    <script>
+        // Balloon colors
+        const balloonColors = ['#FF9AA2', '#FFB7B2', '#FFDAC1', '#E2F0CB', '#B5EAD7', '#C7CEEA', '#F8B195', '#F67280', '#C06C84', '#6C5B7B'];
+        
+        // Gallery images
+       const galleryImages = [
+    'sik1.jpg',
+    'sik2.jpg',
+    'sik3.jpg',
+    'sik4.jpg',
+    'sik5.jpg',
+    'sik6.jpg',
+    'sik7.jpg',
+    'sik8.jpg',
+    'sik9.jpg',
+    'sik10.jpg',
+    'sik11.jpg',
+    'sik12.jpg'
+];
+
+        
+        let currentSlide = 0;
+        let musicPlaying = false;
+        const bgMusic = document.getElementById('bgMusic');
+        
+        // Surprise Button - Balloons
+        document.getElementById('surpriseBtn').addEventListener('click', function() {
+            for (let i = 0; i < 20; i++) {
+                createBalloon();
+            }
+        });
+        
+        // Music Toggle
+        document.getElementById('musicToggle').addEventListener('click', function() {
+            if (musicPlaying) {
+                bgMusic.pause();
+                musicPlaying = false;
+            } else {
+                bgMusic.play();
+                musicPlaying = true;
+            }
+        });
+        
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            balloon.className = 'balloon';
+            
+            // Random position
+            const posX = Math.random() * window.innerWidth;
+            balloon.style.left = `${posX}px`;
+            
+            // Random size
+            const size = Math.random() * 30 + 30;
+            balloon.style.width = `${size}px`;
+            balloon.style.height = `${size * 1.2}px`;
+            
+            // Random color
+            const color = balloonColors[Math.floor(Math.random() * balloonColors.length)];
+            balloon.style.backgroundColor = color;
+            balloon.style.borderRadius = '50% 50% 50% 50% / 60% 60% 40% 40%';
+            
+            // Random animation duration and delay
+            const duration = Math.random() * 6 + 6;
+            balloon.style.animationDuration = `${duration}s`;
+            balloon.style.animationDelay = `${Math.random() * 2}s`;
+            
+            document.body.appendChild(balloon);
+            
+            // Remove balloon after animation completes
+            setTimeout(() => {
+                balloon.remove();
+            }, duration * 1000);
+        }
+        
+        // Lightbox functions
+        function openLightbox(index) {
+            currentSlide = index;
+            document.getElementById('lightbox').style.display = 'flex';
+            document.getElementById('lightbox-img').src = galleryImages[index];
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+        
+        function changeSlide(n) {
+            currentSlide += n;
+            if (currentSlide >= galleryImages.length) {
+                currentSlide = 0;
+            } else if (currentSlide < 0) {
+                currentSlide = galleryImages.length - 1;
+            }
+            document.getElementById('lightbox-img').src = galleryImages[currentSlide];
+        }
+        
+        // Close lightbox when clicking outside image
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+        
+        // Keyboard navigation for lightbox
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.style.display === 'flex') {
+                if (e.key === 'Escape') {
+                    closeLightbox();
+                } else if (e.key === 'ArrowRight') {
+                    changeSlide(1);
+                } else if (e.key === 'ArrowLeft') {
+                    changeSlide(-1);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
